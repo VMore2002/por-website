@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Architecture from "./components/Architecture";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import Blog from "./components/Blog";
 import GithubStats from "./components/GithubStats";
 import Contact from "./components/Contact";
 
@@ -34,6 +35,9 @@ function App() {
         </section>
         <section id="education" className="py-16">
           <Education />
+        </section>
+        <section id="blog" className="py-16">
+          <Blog />
         </section>
         <section id="github" className="py-16">
           <GithubStats />
