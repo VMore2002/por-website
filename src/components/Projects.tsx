@@ -13,25 +13,24 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Secure DevSecOps Pipeline with ASPM & CI/CD Scanning",
+    title: "Secure DevSecOps CI/CD Pipeline",
     description:
-      "Designed and implemented a secure CI/CD pipeline using GitLab CI/CD with integrated security controls across the SDLC. The pipeline performs automated SAST, DAST, SCA, and container image scanning before allowing builds and deployments.",
+      "Automated security scanning integrated into CI/CD pipelines with security gates that block deployments containing critical vulnerabilities.",
     technologies: [
       "GitLab CI/CD",
-      "Docker",
-      "Kubernetes",
       "SAST",
       "DAST",
       "SCA",
-      "ASPM",
+      "Container Scanning",
     ],
     architecture:
-      "The pipeline orchestrates stages for code checkout, static analysis, dependency scanning, container image build and scan, dynamic security testing, and deployment. An ASPM platform aggregates findings from all tools, enforces security gates on merge requests, and provides dashboards for vulnerability trends and compliance.",
-    github: "https://github.com/your-username/devsecops-aspm-pipeline",
+      "GitLab CI/CD orchestrates stages for source checkout, static code analysis (SAST), dependency scanning (SCA), container image build and scan, and dynamic testing (DAST). Security gates evaluate findings and block promotion to staging/production if high-severity issues are detected.",
+    github:
+      "https://github.com/VMore2002/Secure-DevSecOps-CI-CD-Pipeline",
     categoryTags: ["DevSecOps", "CI/CD", "Security"],
   },
   {
-    title: "AWS Three-Tier Web Application Architecture",
+    title: "AWS Three-Tier Infrastructure Deployment",
     description:
       "Designed and deployed a production-ready three-tier architecture on AWS using EC2, RDS, Application Load Balancer, and Auto Scaling Groups, backed by Terraform and Ansible automation.",
     technologies: [
@@ -45,17 +44,19 @@ const projects: Project[] = [
     ],
     architecture:
       "The solution uses a secure VPC with public and private subnets, NAT Gateway, route tables, and security groups. Application instances run in private subnets behind an ALB, while RDS is deployed in isolated subnets. Terraform provisions all resources, Ansible automates instance configuration, and CloudWatch, Prometheus, and Grafana provide monitoring.",
-    github: "https://github.com/your-username/aws-three-tier-architecture",
+    github:
+      "https://github.com/VMore2002/AWS-Three-Tier-Infrastructure-Deployment",
     categoryTags: ["AWS", "IaC", "DevOps"],
   },
   {
-    title: "Segmented Enterprise Network with pfSense & Nagios",
+    title: "Enterprise Network Security Architecture",
     description:
       "Implemented a secure enterprise network using pfSense as the core firewall and router, with multiple VLANs for WAN, LAN, DMZ, internal, and IPS zones, and integrated Nagios for continuous monitoring.",
     technologies: ["pfSense", "VLANs", "DMZ", "IPS", "Nagios", "Virtualization"],
     architecture:
       "The design follows defense-in-depth principles with segmented VLANs for different trust zones, strict firewall rules for east-west and north-south traffic, and a DMZ hosting public-facing services. pfSense handles routing, firewalling, and VPN, while Nagios monitors host and service health along with inter-VLAN and internet connectivity.",
-    github: "https://github.com/your-username/enterprise-network-pfsense",
+    github:
+      "https://github.com/VMore2002/Enterprise-Network-Security-Architecture",
     categoryTags: ["Networking", "Security", "Monitoring"],
   },
 ];

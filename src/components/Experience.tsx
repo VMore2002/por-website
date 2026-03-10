@@ -13,7 +13,7 @@ const experiences: ExperienceItem[] = [
   {
     role: "DevOps Engineer",
     company: "Heaptrace Technology",
-    period: "2025 – Present",
+    period: "Sep 2025 – Jan 2026",
     points: [
       "Designed and deployed a three-tier web application architecture on AWS using EC2, RDS, Application Load Balancer, and Auto Scaling Groups.",
       "Configured a secure VPC with public/private subnets, NAT Gateway, route tables, and security groups.",

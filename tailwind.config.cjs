@@ -6,15 +6,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          500: "#38bdf8", // sky-400
-          600: "#0284c7", // sky-600
+          500: "#a855f7", // purple-500
+          600: "#7c3aed", // purple-600
         },
         accent: {
-          500: "#22c55e", // green-500
+          500: "#22d3ee", // cyan-400
         },
       },
       boxShadow: {
-        "glow-primary": "0 0 30px rgba(56,189,248,0.35)",
+        "glow-primary": "0 0 30px rgba(168,85,247,0.4)",
       },
     },
   },

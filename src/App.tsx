@@ -3,8 +3,10 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Architecture from "./components/Architecture";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import GithubStats from "./components/GithubStats";
 import Contact from "./components/Contact";
 
 function App() {
@@ -24,19 +26,27 @@ function App() {
         <section id="projects" className="py-16">
           <Projects />
         </section>
+        <section id="architecture" className="py-16">
+          <Architecture />
+        </section>
         <section id="experience" className="py-16">
           <Experience />
         </section>
         <section id="education" className="py-16">
           <Education />
         </section>
+        <section id="github" className="py-16">
+          <GithubStats />
+        </section>
         <section id="contact" className="py-16 pb-24">
           <Contact />
         </section>
       </main>
-      <footer className="border-t border-slate-800 py-6 text-center text-sm text-slate-400">
-        <p>
-          © {new Date().getFullYear()} Vipul More. All rights reserved.
+      <footer className="border-t border-slate-800 py-6 text-center text-xs sm:text-sm text-slate-400">
+        <p>© {new Date().getFullYear()} Vipul More. All rights reserved.</p>
+        <p className="mt-1 text-[11px] text-slate-500">
+          Built with React, Vite, TypeScript, Tailwind CSS, Framer Motion, and
+          React Icons.
         </p>
       </footer>
     </div>
