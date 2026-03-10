@@ -2,7 +2,7 @@ import TechIconStrip from "./TechIconStrip";
 
 const Hero = () => {
   const handleDownload = () => {
-    window.open("/Vipul-More-Resume.pdf", "_blank");
+    window.open("/vipul-more-resume.pdf", "_blank");
   };
 
   const handleContactScroll = () => {
