@@ -100,17 +100,17 @@ const Projects = () => {
         subtitle="Representative work showcasing DevOps, cloud, security, and networking experience."
       />
 
-      <div className="mb-6 flex flex-wrap gap-2 text-xs">
+      <div className="mb-6 flex flex-wrap justify-center gap-2 text-xs">
         {allFilters.map((filter) => {
           const isActive = filter === activeFilter;
           return (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`rounded-full border px-3 py-1 transition ${
+              className={`rounded-full border px-3 py-1 text-[12px] transition-all duration-200 transform hover:scale-[1.02] ${
                 isActive
-                  ? "border-primary-500 bg-primary-500/10 text-primary-300"
-                  : "border-slate-700 bg-slate-900/60 text-slate-300 hover:border-primary-500/70 hover:text-primary-200"
+                  ? "border-[#6366f1] bg-[#6366f1]/10 text-[#111827]"
+                  : "border-[#e5e7eb] bg-white text-[#6b7280] hover:border-[#6366f1] hover:text-[#111827]"
               }`}
             >
               {filter}
@@ -125,10 +125,10 @@ const Projects = () => {
           return (
             <article
               key={project.title}
-              className="card p-5 space-y-3 border-slate-800 hover:border-primary-500/80 transition-colors"
+              className="card p-5 space-y-3 hover:-translate-y-1 hover:shadow-md transition-all duration-200"
             >
             <div className="flex items-start justify-between gap-3">
-              <h3 className="text-sm font-semibold text-slate-100">
+              <h3 className="text-sm font-semibold text-[#111827]">
                 {project.title}
               </h3>
               {project.github && (
@@ -136,13 +136,13 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[11px] font-medium text-primary-300 hover:text-primary-200"
+                  className="text-[11px] font-medium text-[#6366f1] hover:text-[#4f46e5]"
                 >
                   GitHub ↗
                 </a>
               )}
             </div>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="text-xs sm:text-sm text-[#6b7280]">
               {project.description}
             </p>
             <button
@@ -150,16 +150,16 @@ const Projects = () => {
               onClick={() =>
                 setExpandedTitle(isExpanded ? null : project.title)
               }
-              className="text-[11px] font-medium text-primary-300 hover:text-primary-200"
+              className="text-[11px] font-medium text-[#6366f1] hover:text-[#4f46e5]"
             >
               {isExpanded ? "Hide architecture details ↑" : "View architecture details ↓"}
             </button>
             {isExpanded && (
-              <div className="mt-2 border-t border-slate-800 pt-3 space-y-1.5">
-                <p className="text-[11px] font-semibold text-slate-200">
+              <div className="mt-2 border-t border-[#e5e7eb] pt-3 space-y-1.5">
+                <p className="text-[11px] font-semibold text-[#111827]">
                   Architecture
                 </p>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#6b7280]">
                   {project.architecture}
                 </p>
               </div>
@@ -168,7 +168,7 @@ const Projects = () => {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full bg-slate-900/80 border border-slate-700 px-2 py-0.5 text-[10px] text-slate-200"
+                  className="rounded-full bg-[#f5f7fb] border border-[#e5e7eb] px-2 py-0.5 text-[10px] text-[#6b7280]"
                 >
                   {tech}
                 </span>

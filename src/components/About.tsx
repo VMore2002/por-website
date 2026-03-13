@@ -7,59 +7,37 @@ const About = () => {
   return (
     <div
       ref={ref}
-      className={`section-container space-y-6 transition-all duration-700 ${
+      className={`section-container transition-all duration-700 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <SectionHeading
-        eyebrow="About"
-        title="About Me"
-        subtitle="DevOps engineer focused on reliable, secure, and automated infrastructure on AWS."
-      />
+      <div className="text-center mb-8">
+        <SectionHeading title="About Me" />
+      </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
-        <div className="md:col-span-2 space-y-4 text-sm text-slate-300">
-          <p>
-            I am a DevOps Engineer with hands-on experience designing and
-            deploying three-tier web application architectures, secure VPC
-            networks, and automated CI/CD pipelines on AWS. My work spans
-            infrastructure provisioning with Terraform, configuration management
-            using Ansible, and containerized workloads with Docker and Docker
-            Compose.
-          </p>
-          <p>
-            I enjoy building robust delivery pipelines, hardening cloud
-            environments, and implementing observability with CloudWatch,
-            Prometheus, and Grafana. My goal is to bridge development and
-            operations by delivering repeatable, reliable, and secure
-            deployment workflows.
-          </p>
-        </div>
-
-        <div className="space-y-3 text-xs sm:text-sm">
-          <div className="card p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-slate-100">
-              Career Focus
-            </h3>
-            <ul className="list-disc list-inside text-slate-300 space-y-1">
-              <li>DevOps & Cloud infrastructure on AWS</li>
-              <li>Secure, automated CI/CD pipelines</li>
-              <li>Infrastructure as Code & configuration automation</li>
-              <li>Monitoring, observability & reliability engineering</li>
-            </ul>
-          </div>
-          <div className="card p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-slate-100">
-              Key Strengths
-            </h3>
-            <ul className="list-disc list-inside text-slate-300 space-y-1">
-              <li>Strong understanding of AWS networking & security</li>
-              <li>Hands-on with Terraform, Ansible, Jenkins, GitLab CI/CD</li>
-              <li>Solid Linux administration (Ubuntu) and web servers</li>
-              <li>Clear documentation and architecture-first mindset</li>
-            </ul>
-          </div>
-        </div>
+      <div className="card p-8 md:p-10 text-[16px] leading-[1.7] text-[#6b7280]">
+        <p className="mb-4">
+          I’m a DevOps engineer focused on designing and operating{" "}
+          <span className="font-medium text-[#111827]">cloud infrastructure</span>,{" "}
+          <span className="font-medium text-[#111827]">automation</span>, and{" "}
+          <span className="font-medium text-[#111827]">CI/CD pipelines</span> that keep
+          applications reliable and secure.
+        </p>
+        <p className="mb-4">
+          My work centers around modern tooling like{" "}
+          <span className="font-medium text-[#111827]">Docker</span>,{" "}
+          <span className="font-medium text-[#111827]">Kubernetes</span>,{" "}
+          <span className="font-medium text-[#111827]">Terraform</span>, and{" "}
+          <span className="font-medium text-[#111827]">Jenkins</span> running on{" "}
+          <span className="font-medium text-[#111827]">Linux</span>, with a strong focus on
+          observability and <span className="font-medium text-[#111827]">monitoring</span> so that
+          issues are detected before they impact users.
+        </p>
+        <p>
+          I enjoy building simple, repeatable workflows that make it easy for teams to ship
+          changes quickly, safely, and confidently—whether that’s through well-structured
+          infrastructure as code, automated deployments, or clear feedback loops.
+        </p>
       </div>
     </div>
   );

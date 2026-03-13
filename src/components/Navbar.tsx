@@ -1,15 +1,15 @@
 const sections = [
   { id: "hero", label: "Home" },
-  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "architecture", label: "Architecture" },
-  { id: "experience", label: "Experience" },
-  { id: "education", label: "Education" },
   { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
+  const handleDownload = () => {
+    window.open("/vipul-more-resume.pdf", "_blank");
+  };
+
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -18,35 +18,39 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-[#e5e7eb] bg-white/90 backdrop-blur">
       <nav className="section-container flex items-center justify-between py-3">
         <button
           onClick={() => handleScroll("hero")}
-          className="text-sm font-semibold tracking-tight text-slate-50"
+          className="text-sm font-semibold tracking-tight text-[#111827]"
         >
-          Vipul <span className="text-primary-500">More</span>
+          Vipul <span className="text-[#6366f1]">More</span>
         </button>
-        <div className="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <div className="hidden md:flex items-center gap-8 text-sm text-[#6b7280]">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => handleScroll(section.id)}
-              className="hover:text-primary-400 transition-colors"
+              className="hover:text-[#111827] transition-colors"
             >
               {section.label}
             </button>
           ))}
         </div>
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            handleScroll("contact");
-          }}
-          className="rounded-full border border-primary-500/60 bg-primary-500/10 px-4 py-1.5 text-xs font-medium text-primary-300 shadow-glow-primary hover:bg-primary-500/20 transition"
-        >
-          Let&apos;s talk
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={handleDownload}
+            className="text-sm text-[#6b7280] hover:text-[#111827] transition-colors"
+          >
+            Resume
+          </button>
+          <button
+            onClick={() => handleScroll("contact")}
+            className="rounded-full bg-[#111827] text-white text-xs font-medium px-4 py-2 hover:bg-[#4b5563] transition-all duration-200 transform hover:scale-[1.02]"
+          >
+            Contact
+          </button>
+        </div>
       </nav>
     </header>
   );

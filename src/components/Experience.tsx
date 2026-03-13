@@ -42,21 +42,21 @@ const Experience = () => {
         subtitle="Practical DevOps and infrastructure experience delivering secure, automated environments."
       />
 
-      <ol className="relative border-l border-slate-800 ml-3 mt-4 space-y-8">
+      <ol className="relative border-l border-[#e5e7eb] ml-3 mt-4 space-y-8">
         {experiences.map((exp) => (
           <li key={exp.company} className="ml-4">
-            <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-primary-400 bg-slate-950" />
-            <div className="card p-4 space-y-2">
+            <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-[#6366f1] bg-white" />
+            <div className="card p-5 space-y-2 hover:-translate-y-1 hover:shadow-md transition-all duration-200">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
-                  <h3 className="text-sm font-semibold text-slate-100">
+                  <h3 className="text-sm font-semibold text-[#111827]">
                     {exp.role}
                   </h3>
-                  <p className="text-xs text-primary-300">{exp.company}</p>
+                  <p className="text-xs text-[#6366f1]">{exp.company}</p>
                 </div>
-                <p className="text-[11px] text-slate-400">{exp.period}</p>
+                <p className="text-[11px] text-[#9ca3af]">{exp.period}</p>
               </div>
-              <ul className="mt-2 list-disc list-inside text-xs sm:text-sm text-slate-300 space-y-1.5">
+              <ul className="mt-2 list-disc list-inside text-xs sm:text-sm text-[#6b7280] space-y-1.5">
                 {exp.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}

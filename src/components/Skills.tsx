@@ -1,82 +1,78 @@
 import SectionHeading from "./SectionHeading";
-import { useInViewProgress } from "../hooks/useInViewProgress";
 import { useInViewReveal } from "../hooks/useInViewReveal";
+import type { IconType } from "react-icons";
+import {
+  FiTerminal,
+  FiCloud,
+  FiGitBranch,
+  FiBox,
+  FiCode,
+  FiGitCommit,
+  FiActivity,
+} from "react-icons/fi";
 
 type SkillCategory = {
   name: string;
-  skills: { label: string; level: number }[];
+  items: string[];
+  borderColor: string;
+  Icon: IconType;
 };
 
 const categories: SkillCategory[] = [
   {
-    name: "Cloud Platforms",
-    skills: [{ label: "AWS", level: 85 }],
+    name: "Operating Systems & Scripting",
+    items: ["Linux", "Bash", "Cron", "Shell Scripting"],
+    borderColor: "#86efac",
+    Icon: FiTerminal,
   },
   {
-    name: "DevOps Tools",
-    skills: [
-      { label: "Jenkins", level: 80 },
-      { label: "GitLab CI/CD", level: 80 },
+    name: "Cloud (AWS)",
+    items: [
+      "EC2, VPC, S3, EBS, EFS, RDS",
+      "IAM, CloudWatch",
+      "Route 53, CloudFront, Lambda",
     ],
-  },
-  {
-    name: "Containers & Orchestration",
-    skills: [
-      { label: "Docker", level: 85 },
-      { label: "Docker Compose", level: 80 },
-      { label: "Kubernetes", level: 60 },
-    ],
-  },
-  {
-    name: "CI/CD",
-    skills: [
-      { label: "Pipeline Design & Automation", level: 85 },
-      { label: "Security Scanning (SAST/DAST/SCA)", level: 80 },
-    ],
-  },
-  {
-    name: "Infrastructure as Code",
-    skills: [
-      { label: "Terraform (Modular)", level: 85 },
-      { label: "Ansible (Playbooks)", level: 80 },
-    ],
-  },
-  {
-    name: "Monitoring & Observability",
-    skills: [
-      { label: "AWS CloudWatch", level: 80 },
-      { label: "Prometheus", level: 75 },
-      { label: "Grafana", level: 75 },
-      { label: "Nagios", level: 65 },
-    ],
-  },
-  {
-    name: "Networking & Security",
-    skills: [
-      { label: "VPC, Subnets, Route Tables", level: 85 },
-      { label: "Security Groups, NACLs", level: 80 },
-      { label: "IAM Roles & Policies", level: 80 },
-      { label: "DMZ, VLANs, IPS (pfSense)", level: 70 },
-    ],
-  },
-  {
-    name: "Programming / Scripting",
-    skills: [
-      { label: "Bash scripting", level: 75 },
-      { label: "Automation scripting", level: 70 },
-    ],
+    borderColor: "#fdba74",
+    Icon: FiCloud,
   },
   {
     name: "Version Control",
-    skills: [
-      { label: "Git", level: 85 },
-      { label: "GitLab", level: 80 },
+    items: ["Git", "GitHub", "GitLab"],
+    borderColor: "#fca5a5",
+    Icon: FiGitBranch,
+  },
+  {
+    name: "Containers & Orchestration",
+    items: ["Docker", "Docker Compose", "Kubernetes", "EKS"],
+    borderColor: "#93c5fd",
+    Icon: FiBox,
+  },
+  {
+    name: "Infrastructure as Code",
+    items: ["Terraform", "Modules", "State Management", "Workspaces"],
+    borderColor: "#c4b5fd",
+    Icon: FiCode,
+  },
+  {
+    name: "CI/CD",
+    items: [
+      "Jenkins, Maven, SonarQube",
+      "Blue-Green Deployments",
+      "Canary Deployments",
+      "Rolling Deployments",
     ],
+    borderColor: "#93c5fd",
+    Icon: FiGitCommit,
+  },
+  {
+    name: "Monitoring & Observability",
+    items: ["Datadog", "Logs & Metrics", "Alerts"],
+    borderColor: "#86efac",
+    Icon: FiActivity,
   },
 ];
 
 const Skills = () => {
-  const { ref: barRef, visible } = useInViewProgress();
   const { ref: sectionRef, visible: sectionVisible } = useInViewReveal();
 
   return (
@@ -88,36 +84,29 @@ const Skills = () => {
     >
       <SectionHeading
         eyebrow="Skills"
-        title="Technical Skills"
-        subtitle="A snapshot of the tools and platforms I use to build resilient, secure, and automated systems."
+        title="Skills & Tech Stack"
+        subtitle="Core technologies and domains I work with across cloud infrastructure and DevOps."
       />
-      <div
-        ref={barRef}
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-4"
-      >
-        {categories.map((category) => (
-          <div key={category.name} className="card p-4 space-y-3">
-            <h3 className="text-sm font-semibold text-slate-100">
-              {category.name}
-            </h3>
-            <div className="space-y-3">
-              {category.skills.map((skill) => (
-                <div key={skill.label}>
-                  <div className="flex justify-between text-[11px] text-slate-300 mb-1">
-                    <span>{skill.label}</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div className="h-2 rounded-full bg-slate-800 overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-500 transition-all duration-700 ease-out"
-                      style={{
-                        width: visible ? `${skill.level}%` : "0%",
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {categories.map(({ name, items, borderColor, Icon }) => (
+          <div
+            key={name}
+            className="h-full rounded-[14px] border-[2px] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-1"
+            style={{ borderColor }}
+          >
+            <div className="flex items-center gap-2.5 mb-3.5">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f9fafb] text-[#111827]">
+                <Icon className="h-4 w-4" />
+              </span>
+              <h3 className="text-[18px] font-semibold text-[#111827]">
+                {name}
+              </h3>
             </div>
+            <ul className="mt-1.5 space-y-1.5 list-disc pl-[18px] text-[15px] leading-[1.8] text-[#111827] marker:text-[#2563eb]">
+              {items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

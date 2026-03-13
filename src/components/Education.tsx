@@ -48,14 +48,17 @@ const Education = () => {
       />
       <div className="mt-4 space-y-4">
         {education.map((item) => (
-          <div key={item.title} className="card p-4 flex flex-col gap-1.5">
-            <h3 className="text-sm font-semibold text-slate-100">
+          <div
+            key={item.title}
+            className="card p-5 flex flex-col gap-1.5 hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+          >
+            <h3 className="text-sm font-semibold text-[#111827]">
               {item.title}
             </h3>
-            <p className="text-xs text-primary-300">{item.institution}</p>
-            <p className="text-[11px] text-slate-400">{item.period}</p>
+            <p className="text-xs text-[#6366f1]">{item.institution}</p>
+            <p className="text-[11px] text-[#9ca3af]">{item.period}</p>
             {item.detail && (
-              <p className="text-[11px] text-slate-300">{item.detail}</p>
+              <p className="text-[11px] text-[#6b7280]">{item.detail}</p>
             )}
           </div>
         ))}

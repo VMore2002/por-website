@@ -18,59 +18,59 @@ const Contact = () => {
       />
 
       <div className="mt-4 grid gap-8 md:grid-cols-[minmax(0,1.1fr)]">
-        <div className="space-y-4 text-sm text-slate-300 max-w-xl">
-          <div className="card p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-slate-100">
+        <div className="space-y-4 text-sm text-[#6b7280] max-w-xl">
+          <div className="card p-5 space-y-2 hover:-translate-y-1 hover:shadow-md transition-all duration-200">
+            <h3 className="text-sm font-semibold text-[#111827]">
               Contact Details
             </h3>
             <ul className="space-y-1 text-xs sm:text-sm">
               <li>
-                <span className="text-slate-400">Email: </span>
+                <span className="text-[#9ca3af]">Email: </span>
                 <a
                   href="mailto:vipulmore790@gmail.com"
-                  className="text-primary-300 hover:text-primary-200"
+                  className="text-[#6366f1] hover:text-[#4f46e5]"
                 >
                   vipulmore790@gmail.com
                 </a>
               </li>
               <li>
-                <span className="text-slate-400">Phone: </span>
+                <span className="text-[#9ca3af]">Phone: </span>
                 <a
                   href="tel:+919131318740"
-                  className="text-primary-300 hover:text-primary-200"
+                  className="text-[#6366f1] hover:text-[#4f46e5]"
                 >
                   +91 91313 18740
                 </a>
               </li>
               <li>
-                <span className="text-slate-400">Location: </span>Pune, India
+                <span className="text-[#9ca3af]">Location: </span>Pune, India
               </li>
             </ul>
           </div>
 
-          <div className="card p-4 space-y-3">
-            <h3 className="text-sm font-semibold text-slate-100">
+          <div className="card p-5 space-y-3 hover:-translate-y-1 hover:shadow-md transition-all duration-200">
+            <h3 className="text-sm font-semibold text-[#111827]">
               Online Profiles
             </h3>
             <ul className="space-y-1 text-xs sm:text-sm">
               <li>
-                <span className="text-slate-400">LinkedIn: </span>
+                <span className="text-[#9ca3af]">LinkedIn: </span>
                 <a
                   href="https://www.linkedin.com/in/vipul-more25"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary-300 hover:text-primary-200"
+                  className="text-[#6366f1] hover:text-[#4f46e5]"
                 >
                   linkedin.com/in/vipul-more25
                 </a>
               </li>
               <li>
-                <span className="text-slate-400">GitHub: </span>
+                <span className="text-[#9ca3af]">GitHub: </span>
                 <a
                   href="https://github.com/VMore2002"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary-300 hover:text-primary-200"
+                  className="text-[#6366f1] hover:text-[#4f46e5]"
                 >
                   github.com/VMore2002
                 </a>
