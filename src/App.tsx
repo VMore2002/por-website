@@ -30,6 +30,9 @@ function App() {
         <section id="tech-stack" className="py-12 md:py-20">
           <TechStackSection />
         </section>
+        <section id="experience" className="py-12 md:py-20">
+          <Experience />
+        </section>
         <section id="projects" className="py-12 md:py-20">
           <Projects />
         </section>
@@ -44,9 +47,6 @@ function App() {
         </section>
         <section id="blog" className="py-12 md:py-20">
           <Blog />
-        </section>
-        <section id="experience" className="py-12 md:py-20">
-          <Experience />
         </section>
         <section id="education" className="py-12 md:py-20">
           <Education />
